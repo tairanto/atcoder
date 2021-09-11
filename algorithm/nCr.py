@@ -24,5 +24,9 @@ def COM(n,k):
 # 前処理
 COMinit()
 
-a,b=map(int,input().split())
-print(COM(a,b))
+#a,b=map(int,input().split())
+t=0
+for i in range(1,101):
+    t=COM(200,i)
+    print(i,200-i,COM(200,i))
+print(t)

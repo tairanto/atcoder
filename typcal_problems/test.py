@@ -1,9 +1,23 @@
 #!/usr/bin/python3
 
-import bisect
-N=int(input())
-A=sorted([*map(int,input().split())])
-for i in range(int(input())):
-    B=int(input())
-    index = bisect.bisect_left(A, B)
-    print(min(abs(A[index-1]-B),abs(A[(index)%N]-B)))
+
+def cal(t,bit,x):
+    if t==1:
+        bit&=x
+    elif t==2:
+        bit|=x
+    else:
+        bit^=x
+    return bit
+
+N,C=map(int,input().split())
+ta=[[*map(int,input().split())] for i in range(N)]
+for i in range(N):
+    t,x=ta[i]
+    if i==0:
+        bit=x
+    else:
+        bit=cal(t,bit,x)
+    print("a",C,bit)
+    C=cal(ta[0][0],C,bit)
+    print(C)

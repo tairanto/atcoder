@@ -13,8 +13,7 @@ def unite(x,y):
     if x==y:return
     if r[x]>r[y]:
         x,y=y,x
-    if r[x]==r[y]:
-        r[y]+=1
+    r[y]+=r[x] #グループの大きさをたどれるようにした
     p[x]=y
 
 n,m=map(int,input().split())

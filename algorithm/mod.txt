@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+
+mod=10**9+7
+
+#ある数で割る時の逆元の求め方
+#pow(ある数,mod-2,mod)を書ければ求められる
+
+pow(x,mod-2,mod)

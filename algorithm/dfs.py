@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+#pypyだと遅い
 import sys
 sys.setrecursionlimit(10**9)
 def dfs(v,ptr):

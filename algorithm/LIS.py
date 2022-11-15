@@ -1,12 +1,7 @@
 #!/usr/bin/python3
 
 N=int(input())
-A=[*map(int,input().split())]
-B=[*map(int,input().split())]
-seq=[0 for i in range(N)]
-for i in range(N):
-    seq[A[i]-1]=B[i]
-
+seq=[*map(int,input().split())]
 import bisect
 
 LIS = [seq[0]]
@@ -16,4 +11,4 @@ for i in range(len(seq)):
     else:
         LIS[bisect.bisect_left(LIS, seq[i])] = seq[i]
 
-print(len(LIS)+N)
+print(len(LIS))
